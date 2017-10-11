@@ -78,13 +78,15 @@ In the videos the slope of the lane chages as vehicle moves this induces flicker
 
 ### SolidWhiteRight video
 
-[![SolidWhiteRight]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/solidWhiteRight.mp4")
-
+[![SolidWhiteRight]()](https://youtu.be/IHxccpCaSwY")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IHxccpCaSwY" frameborder="0" allowfullscreen></iframe>
 
 ### SolidyellowLeft video
 
-[![SolidyellowLeft]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/solidYellowLeft.mp4")
 
+[![SolidyellowLeft]()](https://youtu.be/YY5FnrgykZc")
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YY5FnrgykZc" frameborder="0" allowfullscreen></iframe>
 
 
 In the challenge video the lane direction changes quite a bit,left lane is close to divider hence the pipeline described above doesn't work (edges detected and area of interest mask is not able to separate lane from divider), there are also shadows on the lane and probably camera position changes (hood is exposed more towards end of the video). For the challenge video, a new mask is created by first extracting white pixels from image, then extracting yellow pixels and combining the 2 pictures.
@@ -92,8 +94,8 @@ This method helps much better extraction of lanes.
 
 
 ### Challenge video
-[![Challenge ]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/challenge.mp4")
-
+[![Challenge ]()](https://youtu.be/1ccKLxZ5i-8")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1ccKLxZ5i-8" frameborder="0" allowfullscreen></iframe>
 
 
 ### 3. Suggest possible improvements to your pipeline
