@@ -14,10 +14,10 @@ The Project work (code, results and this report) can be found [Here!](https://gi
 
 [//]: # (Image References)
 
-<img src="./test_images/solidWhiteCurve.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./test_images/solidWhiteCurve.jpg" width="400" height="270" alt="Combined Image" />
 
 
-<img src="./test_images/solidWhiteCurve.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./test_images/solidWhiteCurve.jpg" width="400" height="270" alt="Combined Image" />
 
 
 ## 1. Description of pipeline  and modification of the draw_lines() function
@@ -27,31 +27,32 @@ The Pipeline is a function macro of steps required to postprocess images or vide
 The steps implemented and results are listed below:
 * **Step1: convert to grey scale** ( in challenge video a masked image is use where in yellow and white pixels are extracted instead of greysacling), openCV function used is cv2.cvtColor.
 
-<img src="./image_for_report/solidWhiteCurve_grey.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./image_for_report/solidWhiteCurve_grey.jpg" width="400" height="270" alt="Combined Image" />
 
 * **Step2: gaussian blur** (remove noise from the image), openCV function used is cv2.GaussianBlur
 
-<img src="./image_for_report/solidWhiteCurve_gblur.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./image_for_report/solidWhiteCurve_gblur.jpg" width="400" height="270" alt="Combined Image" />
 
 
 * **Step3: canny edge detenction** (standard edge detection algorithm, autothreshold detection not explored),openCV function used is  cv2.Canny
 
 
-<img src="./image_for_report/solidWhiteCurve_canny.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./image_for_report/solidWhiteCurve_canny.jpg" width="400" height="270" alt="Combined Image" />
 
 * **Step4: define vertices of polygon to mask** (define area of image and generate a mask in the area which will be used to mark lane).
 
 
-<img src="./image_for_report/solidWhiteCurve_maksed.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./image_for_report/solidWhiteCurve_maksed.jpg" width="400" height="270" alt="Combined Image" />
 
 * **Step5: Hough transform**  (Hough transform is used to generate lines or in general shapes from image), openCv function used is cv2.HoughLinesP
 
 * **Step6: draw lines with a blank image** (output of Hough transform is series of x-y pairs that is used to draw lane marking using cv2.line function)
 
-<img src="./image_for_report/solidWhiteCurve_hough.jpg" width="480" height="270" alt="Combined Image" />
+<img src="./image_for_report/solidWhiteCurve_hough.jpg" width="400" height="270" alt="Combined Image" />
 
 * **Step7: overlap orig image with Hough trans and drawn_line img**, openCV function cv2.addWeighted is used which transposes black and line drawn image over original image
-![image](./image_for_report/solidWhiteCurve_final_broken.jpg)
+
+<img src="./image_for_report/solidWhiteCurve_final_broken.jpg" width="400" height="270" alt="Combined Image" />
 
 ### Modifications to draw_lines function
 The pipeline is tested on image and video examples provided with the Project files . 
@@ -62,8 +63,7 @@ Here are the fine tuning that needs to be done:
 * In order to draw continous lane markings, I modified the draw_lines function by separating the lines based on slope into left and right bin. I also stored the the correspong x,y cords for each bin, based on x,y pairs, I generated a linear fit using np.polyfit function which return slope and intercepts. Using the slope and intercepts I generated the top x,y and bottom x,y for left and right lanes.
 **Here is the outcome of new draw_lines function**
 
-![image2](./test_images_output/solidWhiteCurve.jpg "Lane Marked")
-
+<img src="./image_for_report/solidWhiteCurve_final.jpg" width="400" height="270" alt="Combined Image" />
 
 
 ### The Jupyter notebook of project P1.ipynb and html copy can be found in the github repository
@@ -78,11 +78,13 @@ In the videos the slope of the lane chages as vehicle moves this induces flicker
 
 ### SolidWhiteRight video
 
-<video controls src="./test_videos_output/solidWhiteRight.mp4" />
+[![SolidWhiteRight]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/solidWhiteRight.mp4")
+
 
 ### SolidyellowLeft video
 
-<video controls src="./test_videos_output/solidYellowLeft.mp4" />
+[![SolidyellowLeft]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/solidYellowLeft.mp4")
+
 
 
 In the challenge video the lane direction changes quite a bit,left lane is close to divider hence the pipeline described above doesn't work (edges detected and area of interest mask is not able to separate lane from divider), there are also shadows on the lane and probably camera position changes (hood is exposed more towards end of the video). For the challenge video, a new mask is created by first extracting white pixels from image, then extracting yellow pixels and combining the 2 pictures.
@@ -90,8 +92,9 @@ This method helps much better extraction of lanes.
 
 
 ### Challenge video
+[![Challenge ]()](https://github.com/atul799/CarND-LaneLines-P1/blob/master/test_videos_output/challenge.mp4")
 
-<video controls src="./test_videos_output/challenge.mp4" />
+
 
 ### 3. Suggest possible improvements to your pipeline
 
