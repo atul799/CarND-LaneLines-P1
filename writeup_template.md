@@ -78,13 +78,13 @@ In the videos the slope of the lane chages as vehicle moves this induces flicker
 
 ### SolidWhiteRight video
 
-[![SolidWhiteRight](https://youtu.be/vi/IHxccpCaSwY/0.jpg)](https://youtu.be/IHxccpCaSwY)
+[![SolidWhiteRight](https://img.youtube.com/vi/IHxccpCaSwY/0.jpg)](https://youtu.be/IHxccpCaSwY)
 
 
 ### SolidyellowLeft video
 
 
-[![SolidyellowLeft](https://youtu.be/vi/YY5FnrgykZc/0.jpg)](https://youtu.be/YY5FnrgykZc)
+[![SolidyellowLeft](https://img.youtube.com/vi/YY5FnrgykZc/0.jpg)](https://youtu.be/YY5FnrgykZc)
 
 
 
@@ -94,7 +94,7 @@ This method helps much better extraction of lanes.
 
 
 ### Challenge video
-[![Challenge ](https://youtu.be/vi/1ccKLxZ5i-8/0.jpg)](https://youtu.be/1ccKLxZ5i-8)
+[![Challenge ](https://img.youtube.com/vi/1ccKLxZ5i-8/0.jpg)](https://youtu.be/1ccKLxZ5i-8)
 
 
 
